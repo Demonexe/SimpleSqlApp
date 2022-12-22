@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C5623BE8-9E01-F975-9701-72A7623060F2" name="Sklep">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>C387EB61-CF46-C1E5-5CE5-8FB8B7A458D7</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_sklep" id="E75677BB-03E2-7CB6-4D9C-62AEE2765556">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>4BABA65D-3E3D-21A1-4CBE-3899183C6476</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="adres" id="CC479F9C-66D7-884D-89A4-D0074E2BA0F7">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>9763C4B5-D967-AA8C-A5E2-49FE349D1E09</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="kod_pocztowy" id="DB30922D-32A6-B645-2269-6064599758BC">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>B3FBA0BE-7535-E3FA-8ACD-524A1AFB45E5</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EA141404-FD95-C0B5-9288-AA60DF61118F" name="Sklep_PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>8B80E371-6EBA-46A7-166D-E1ACE65F91AA</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E75677BB-03E2-7CB6-4D9C-62AEE2765556"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

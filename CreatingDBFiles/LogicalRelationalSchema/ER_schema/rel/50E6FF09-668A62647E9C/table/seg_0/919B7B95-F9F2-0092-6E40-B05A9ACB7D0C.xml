@@ -1,0 +1,203 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="919B7B95-F9F2-0092-6E40-B05A9ACB7D0C" name="Transakcja">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>66E8948B-979E-FEA1-BEFA-848794B5B65A</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_transakcji" id="36A991E4-71A3-5384-E130-1AA0A0848CFD">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>5BFE69B5-C2D4-2BD6-8B9B-C2C3217DCB1A</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_zawarcia" id="96E9F5FB-63B7-51EE-C108-EDA053DFDFEC">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>D2632C82-C6F4-869D-1D41-8B0F0B858920</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_prac" id="6F9F2409-7220-58DD-170A-975B4BAEFAE4">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>31F2759F-8BE4-59FE-0FEF-FF254272EA99</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3F885A06-D5BE-5C6F-6C72-241E7B128E55" referredColumn="8AA58660-7C4F-F460-94C8-424D3AE10F27"/>
+</associations>
+</Column>
+<Column name="id_klienta" id="3912A81A-6EF7-BAFE-C834-6C354CC1FE83">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>CFFB9888-0524-14EB-2898-6BCD7271B642</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8FE52C7-C395-5EA9-5BAC-ABC386D2108D" referredColumn="CBCCCAEB-D119-19B8-6289-EFEF240B27CF"/>
+</associations>
+</Column>
+<Column name="id_dostawcy" id="B2A27A0D-F23A-4A49-B096-A859679ABC9F">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>74029D7F-A943-D1D6-531C-24E410394617</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="213C6B2A-1C29-142A-A58F-CC7028DD6D3D" referredColumn="6EB20E84-3306-9A73-E8A3-4C9DA59A791B"/>
+</associations>
+</Column>
+<Column name="data_dostawy" id="54A23AF7-F0AC-BE97-C942-73D9DB7FD428">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>A3F42C1B-C39C-655F-1ABD-FCF35971F7B4</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="czy_faktura" id="007F7484-99B1-E151-9C05-2BEF40BE553E">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>F91749F9-6C61-29C8-EFE2-4525004C1363</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_koszyka" id="899DF188-F2B8-7E1C-D511-F7DE287E9A82">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>4177E8FA-74F0-8D34-E276-045213D0F911</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49A2A3C7-5CDA-F673-4467-D4B7C326A1FD" referredColumn="BA608B47-8F5C-2F4A-058C-C626175DB9FC"/>
+</associations>
+</Column>
+<Column name="czy_odbior_wlasny" id="076997DC-7605-4E93-9E4E-501EEAA563CA">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>F368EA38-C5CA-B6A9-8ED9-06DDB6BCDEAA</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FA8DF1E4-4958-C041-B58E-D807D44973FC" name="Transakcja_PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>60A0B94D-0055-9E79-FBD2-F3582AA0394E</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36A991E4-71A3-5384-E130-1AA0A0848CFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D535A16-26E0-88D2-1832-97DBFA626426" name="Transakcja__IDX">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A5518BF3-D083-C864-5CF9-69F660511C8B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="899DF188-F2B8-7E1C-D511-F7DE287E9A82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55883F40-4F5A-A892-47AA-3B38C8853EF8" name="Transakcja_Klient_FK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>73497C5E-EBA6-AF52-277B-733204BE6FF6</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3912A81A-6EF7-BAFE-C834-6C354CC1FE83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F8546AC7-E5FC-8B3E-FE9A-023AF7C982E7" name="Transakcja_Koszyk_FK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>A5518BF3-D083-C864-5CF9-69F660511C8B</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="899DF188-F2B8-7E1C-D511-F7DE287E9A82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BEB7C782-A18D-2311-EA95-7803938BE72B" name="Transakcja_Dostawca_FK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:45 UTC</createdTime>
+<generatorID>7EAD563C-AF0C-0AF4-B39B-83D07F1A30AC</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2A27A0D-F23A-4A49-B096-A859679ABC9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60480D91-BDFF-3893-13D8-66F89C5438D5" name="Transakcja_Pracownik_FK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:45 UTC</createdTime>
+<generatorID>660E7C2E-6461-74C5-D1B9-1F4D39B0E858</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F9F2409-7220-58DD-170A-975B4BAEFAE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7915DA63-33CC-C9CD-E6A9-068B207A865C" name="Producent">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>D1DFAC6E-BB63-3DB0-D987-34A27810C42A</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_producenta" id="E1DA8C8D-0170-308E-F40E-E1DC20CFD26B">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>8C52538F-E6B8-E2B2-E0B5-086572ADD86A</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwa" id="872669B6-3C81-AC5D-E3BF-508354ACB1EF">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>8F574229-7E02-79D6-1F21-3341F1BC6E2E</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="adres" id="C57BE99D-6F52-8DC4-8723-C152A89056D6">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>9AFEE85A-8E8C-22C7-9E57-BAE717738027</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numer_tel" id="37203E61-22AC-3021-24E2-020999454BF0">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>1247AEA0-8FFD-B88F-BAA3-DC1C5E23CC5E</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED407FBF-5EC7-6899-9B73-B63884739591" name="Producent_PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>A8CD10B0-D419-CFB6-3D85-7EC725907B59</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1DA8C8D-0170-308E-F40E-E1DC20CFD26B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

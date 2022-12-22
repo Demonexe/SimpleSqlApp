@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AC6A9A90-375A-79D6-2833-AF1A6A788749" name="Pracownik">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:49:01 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_prac" id="2F5BE180-66A1-B535-BE51-D4A335FDB3E2">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:49:59 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="imie" id="21E0F866-1534-677D-1FB3-BEFCCC8B6173">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:50:23 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazwisko" id="928CF3F6-A728-B611-50AE-841BF5F09AFC">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:50:42 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_zatrudnienia" id="F929558A-2C65-6899-546E-E7337329C2FE">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:50:48 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sklep" id="85AED889-6462-C5F5-69E6-3328E717B354">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 19:20:29 UTC</createdTime>
+<generatorID>B778E4D8-E702-25C0-B155-BA93B66F70BA</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<referedAttribute>4BABA65D-3E3D-21A1-4CBE-3899183C6476</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CC1641DB-872C-960F-185A-94D52D8F81EB" name="Pracownik PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:50:07 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2F5BE180-66A1-B535-BE51-D4A335FDB3E2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

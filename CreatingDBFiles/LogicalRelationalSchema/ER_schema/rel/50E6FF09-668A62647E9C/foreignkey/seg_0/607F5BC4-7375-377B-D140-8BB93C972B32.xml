@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="607F5BC4-7375-377B-D140-8BB93C972B32" containerWithKeyObject="CE45125A-385D-DEE2-7291-190BE2BA5E72" localFKIndex="EF8E3328-81AF-816B-1EE9-A5BDA106807B" name="Opinia_Produkt_FK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:49:44 UTC</createdTime>
+<generatorID>DD579770-5873-14D1-6EEE-DF94F1E04139</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<referredTableLongName>Produkt</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2382CA34-8B42-F561-7FF8-737BEDF2DA72</referredTableID>
+<keyObject>7D843EFE-6C88-DDA7-55E7-EB54E475664E</keyObject>
+<referredKeyID>7D843EFE-6C88-DDA7-55E7-EB54E475664E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_produktu,nazwa_kategorii,id_producenta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

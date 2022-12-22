@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1825D766-72C9-B8A0-BFDF-E04AAD8E5826" name="Dostawca">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 19:39:11 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_dostawcy" id="2BD4D056-E46C-8994-7194-30359912F7F8">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 19:44:52 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazwa" id="D69C3875-D739-C32B-99BF-42C586C95C8F">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 19:45:01 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6E90C96B-2DBC-4E89-5EE1-449338DB09AC" name="Dostawcy PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 19:45:00 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2BD4D056-E46C-8994-7194-30359912F7F8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

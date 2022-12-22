@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1A47C98C-8A30-783D-6178-B8A9EE6D1E90" name="Produkt">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:51:32 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_produktu" id="F7B70A9D-FBCA-3B35-5B27-237E77D9E40D">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:53:33 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazwa" id="A8774C6A-AB23-4F41-DC71-79A3E302BD86">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-18 13:09:49 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cena_jedn" id="19A441B3-368C-BFD9-7731-60ACEE7F1216">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:53:48 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="opis" id="8ABA4E60-F1D3-E28D-C16E-CE195E965461">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:53:56 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="specyfikacja" id="388DAB8C-BA4F-B3A1-E331-735433526906">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-02 18:45:25 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazwa_kategorii" id="2CEA8DEB-66AC-3390-6F73-34249EF15FA5">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-18 20:55:43 UTC</createdTime>
+<generatorID>8DEC3B67-40D6-5F45-8019-5F51B2B5AE02</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<referedAttribute>5913879E-DE58-A47F-689F-276D5CA4D2FC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_producenta" id="DC6324C9-1BBF-1C1E-487F-88124F84198B">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-12-18 20:58:20 UTC</createdTime>
+<generatorID>B9050AB4-A78D-A6A7-5E22-7032D0C102CB</generatorID>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<referedAttribute>8C52538F-E6B8-E2B2-E0B5-086572ADD86A</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DB23A84C-5518-4306-A661-CFD6BBF92174" name="Produkt PK">
+<createdBy>Kamil M</createdBy>
+<createdTime>2022-11-20 18:53:44 UTC</createdTime>
+<ownerDesignName>ER_schema</ownerDesignName>
+<engineerTo>
+<item key="50E6FF09-3E85-2D71-66ED-668A62647E9C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F7B70A9D-FBCA-3B35-5B27-237E77D9E40D</attributeRef>
+<attributeRef>2CEA8DEB-66AC-3390-6F73-34249EF15FA5</attributeRef>
+<attributeRef>DC6324C9-1BBF-1C1E-487F-88124F84198B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
