@@ -9,7 +9,7 @@ namespace ProjektSQL
 {
     internal static class SqlQueries
     {
-        public static int SqlNonQuery(string sqlCmd)
+        public static async Task<int> SqlNonQuery(string sqlCmd)
         {
             int deleted;
             Globals.dbManager.connection.Open();
@@ -21,7 +21,7 @@ namespace ProjektSQL
             return deleted;
         }
 
-        public static DataTable SqlSelect(string sqlCmd)
+        public static async Task<DataTable> SqlSelect(string sqlCmd)
         {
             Globals.dbManager.connection.Open();
             Oracle.ManagedDataAccess.Client.OracleCommand cmd = new Oracle.ManagedDataAccess.Client.OracleCommand();

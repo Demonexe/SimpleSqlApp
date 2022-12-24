@@ -17,7 +17,7 @@ namespace ProjektSQL
             InitializeComponent();
         }
 
-        private void buttonUsun_Click(object sender, EventArgs e)
+        private async void buttonUsun_Click(object sender, EventArgs e)
         {
             string sqlNonQuery;
             int controlSum = Globals.BoolToInt(checkBoxMniejsze.Checked) +
@@ -26,7 +26,7 @@ namespace ProjektSQL
             string column_name = comboBoxKolumny.Text;
             string value = textBoxWartosc.Text;
             string date = dateTimePickerUsun.Value.ToString("yyy-MM-dd");
-            string type = SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'").Rows[0][0].ToString();
+            string type = (await SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'")).Rows[0][0].ToString();
             if(type == "NUMBER" && float.TryParse(textBoxWartosc.Text, out _) && controlSum == 1)
                 sqlNonQuery = QueryGenerator.numberDelete(checkBoxMniejsze.Checked, checkBoxWieksze.Checked, checkBoxRowne.Checked,
                     table_name, column_name, value);
@@ -53,7 +53,7 @@ namespace ProjektSQL
             {
                 labelInfo.Text = ex.Message.Split(new[] {':'},2)[1];
             }
-            Globals.mainWindow.dataGV.DataSource = SqlQueries.SqlSelect("select * from " + Globals.mainWindow.comboBoxWybor.Text);
+            Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect("select * from " + Globals.mainWindow.comboBoxWybor.Text);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

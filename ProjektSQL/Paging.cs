@@ -48,7 +48,7 @@ namespace ProjektSQL
 
         public static void DecreasePage()
         {
-            if (currentPage == 1)
+            if (currentPage <= 1)
                 return;
             DataTable dataTable = dataSource.Clone();
             for (int i = (currentPage - 2) * rowsPerPage; i < (currentPage-1) * rowsPerPage; i++)

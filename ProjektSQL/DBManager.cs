@@ -11,7 +11,7 @@ namespace ProjektSQL
         public Oracle.ManagedDataAccess.Client.OracleConnection connection;
         private string connectionString;
 
-        public string SetConnection(string userName, string password)
+        public async Task<string> SetConnection(string userName, string password)
         {
              connectionString = "Data Source=(DESCRIPTION =" +
                 "(ADDRESS = (PROTOCOL = TCP)(HOST =localhost)(PORT = 1521))" +
@@ -21,7 +21,7 @@ namespace ProjektSQL
             try
             {
                 connection = new Oracle.ManagedDataAccess.Client.OracleConnection(connectionString);
-                connection.Open();
+                await Task.Run(() => connection.Open());
                 return null;
             }
             catch (Exception e)

@@ -25,7 +25,7 @@ namespace ProjektSQL
                 Globals.BoolToInt(checkBoxWieksze.Checked) + Globals.BoolToInt(checkBoxMniejsze.Checked);
         }
 
-        private void buttonSelect_Click(object sender, EventArgs e)
+        private async void buttonSelect_Click(object sender, EventArgs e)
         {
             if (comboBoxWyszukaj.Text == "")
             {
@@ -38,7 +38,7 @@ namespace ProjektSQL
             string column_name = comboBoxWyszukaj.Text;
             string value = textBoxWyszukaj.Text;
             string date = dateTimePickerWyszukaj.Value.ToString("yyyy-MM-dd");
-            string type = SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'").Rows[0][0].ToString();
+            string type = (await SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'")).Rows[0][0].ToString();
             if(type == "DATE")
                 sqlQuery = QueryGenerator.dateSelect(controlSum, checkBoxMin.Checked,checkBoxMax.Checked,
                     checkBoxMniejsze.Checked,checkBoxWieksze.Checked,column_name,table_name,date);
@@ -59,7 +59,7 @@ namespace ProjektSQL
             }
             try
             {
-                Globals.mainWindow.dataGV.DataSource = SqlQueries.SqlSelect(sqlQuery);
+                Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect(sqlQuery);
             }
             catch(Exception ex)
             {
