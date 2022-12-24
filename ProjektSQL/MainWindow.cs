@@ -21,7 +21,7 @@ namespace ProjektSQL
         private void buttonZaloguj_Click(object sender, EventArgs e)
         {
             ErrorLabel.Text = Globals.dbManager.SetConnection(textBoxUsername.Text, textBoxPassword.Text);
-            if (ErrorLabel.Text != null)
+            if (ErrorLabel.Text == null)
                 return;
             labelZalogowano.Text = "Zalogowano jako " + textBoxUsername.Text + "!";
             textBoxUsername.Text = textBoxPassword.Text = "";
@@ -97,7 +97,17 @@ namespace ProjektSQL
 
         private void comboBoxWybor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGV.DataSource = SqlQueries.SqlSelect("select * from " + comboBoxWybor.Text);
+            Paging.SetDataSource(SqlQueries.SqlSelect("select * from " + comboBoxWybor.Text));
+        }
+
+        private void buttonPagingLower_Click(object sender, EventArgs e)
+        {
+            Paging.DecreasePage();
+        }
+
+        private void buttonPagingUpper_Click(object sender, EventArgs e)
+        {
+            Paging.IncreasePage();
         }
     }
 }

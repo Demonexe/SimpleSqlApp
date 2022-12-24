@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Opinia
+    internal class Opinia : ITable
     {
         string opinia;
         int id_produktu;

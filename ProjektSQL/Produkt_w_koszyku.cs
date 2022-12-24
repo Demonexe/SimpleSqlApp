@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Produkt_w_koszyku
+    internal class Produkt_w_koszyku : ITable
     {
         int id_produktu;
         string nazwa_kategorii;

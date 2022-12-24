@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Produkt
+    internal class Produkt : ITable
     {
         string nazwa;
         string cena_jedn; // w tabeli jest to wartosc float

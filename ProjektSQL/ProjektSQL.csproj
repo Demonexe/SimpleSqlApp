@@ -81,12 +81,14 @@
   <ItemGroup>
     <Compile Include="DBManager.cs" />
     <Compile Include="Dostawca.cs" />
+    <Compile Include="ITable.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paging.cs" />
     <Compile Include="QueryGenerator.cs" />
     <Compile Include="SelectWindow.cs">
       <SubType>Form</SubType>

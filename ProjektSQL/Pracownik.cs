@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Pracownik
+    internal class Pracownik : ITable
     {
         string imie;
         string nazwisko;

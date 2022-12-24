@@ -14,7 +14,7 @@ namespace ProjektSQL
         public string SetConnection(string userName, string password)
         {
              connectionString = "Data Source=(DESCRIPTION =" +
-                "(ADDRESS = (PROTOCOL = TCP)(HOST =localost)(PORT = 1521))" +
+                "(ADDRESS = (PROTOCOL = TCP)(HOST =localhost)(PORT = 1521))" +
                 "(CONNECT_DATA =" + "(SERVER = LOCAL)" +
                 "(SERVICE_NAME = XEPDB1)));" +
                 "User Id=" + userName + ";Password=" + password +";";

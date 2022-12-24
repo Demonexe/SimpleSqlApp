@@ -8,7 +8,7 @@ using Oracle.ManagedDataAccess;
 
 namespace ProjektSQL
 {
-    internal class Klient
+    internal class Klient : ITable
     {
         string imie;
         string nazwisko;

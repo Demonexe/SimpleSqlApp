@@ -40,6 +40,8 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelZalogowano = new System.Windows.Forms.Label();
+            this.buttonPagingLower = new System.Windows.Forms.Button();
+            this.buttonPagingUpper = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +58,8 @@
             // 
             // dataGV
             // 
+            this.dataGV.AllowUserToAddRows = false;
+            this.dataGV.AllowUserToDeleteRows = false;
             this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV.Location = new System.Drawing.Point(284, 12);
             this.dataGV.MaximumSize = new System.Drawing.Size(1600, 800);
@@ -163,11 +167,33 @@
             this.labelZalogowano.TabIndex = 13;
             this.labelZalogowano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mainWindow
+            // buttonPagingLower
+            // 
+            this.buttonPagingLower.Location = new System.Drawing.Point(835, 515);
+            this.buttonPagingLower.Name = "buttonPagingLower";
+            this.buttonPagingLower.Size = new System.Drawing.Size(84, 32);
+            this.buttonPagingLower.TabIndex = 14;
+            this.buttonPagingLower.Text = "<<<";
+            this.buttonPagingLower.UseVisualStyleBackColor = true;
+            this.buttonPagingLower.Click += new System.EventHandler(this.buttonPagingLower_Click);
+            // 
+            // buttonPagingUpper
+            // 
+            this.buttonPagingUpper.Location = new System.Drawing.Point(1010, 515);
+            this.buttonPagingUpper.Name = "buttonPagingUpper";
+            this.buttonPagingUpper.Size = new System.Drawing.Size(84, 32);
+            this.buttonPagingUpper.TabIndex = 15;
+            this.buttonPagingUpper.Text = ">>>";
+            this.buttonPagingUpper.UseVisualStyleBackColor = true;
+            this.buttonPagingUpper.Click += new System.EventHandler(this.buttonPagingUpper_Click);
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 518);
+            this.ClientSize = new System.Drawing.Size(1104, 553);
+            this.Controls.Add(this.buttonPagingUpper);
+            this.Controls.Add(this.buttonPagingLower);
             this.Controls.Add(this.labelZalogowano);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
@@ -180,7 +206,7 @@
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.dataGV);
             this.Controls.Add(this.buttonZaloguj);
-            this.Name = "mainWindow";
+            this.Name = "MainWindow";
             this.Text = "SQL Manager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.ResumeLayout(false);
@@ -192,7 +218,7 @@
 
         private System.Windows.Forms.Button buttonZaloguj;
         public System.Windows.Forms.DataGridView dataGV;
-        private System.Windows.Forms.Label ErrorLabel;
+        public System.Windows.Forms.Label ErrorLabel;
         private System.Windows.Forms.Button buttonWyszukaj;
         private System.Windows.Forms.Button buttonWstaw;
         private System.Windows.Forms.Button buttonUsun;
@@ -202,6 +228,8 @@
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelZalogowano;
+        private System.Windows.Forms.Button buttonPagingLower;
+        private System.Windows.Forms.Button buttonPagingUpper;
     }
 }
 

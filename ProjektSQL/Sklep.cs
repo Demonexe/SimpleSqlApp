@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Sklep
+    internal class Sklep : ITable
     {
         string adres;
         string kod_pocztowy;

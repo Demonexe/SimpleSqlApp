@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Transakcja
+    internal class Transakcja : ITable
     {
         DateTime data_zawarcia;
         int id_prac;

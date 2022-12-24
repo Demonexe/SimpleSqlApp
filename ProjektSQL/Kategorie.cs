@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSQL
 {
-    internal class Kategorie
+    internal class Kategorie : ITable
     {
         string nazwa_kategorii;
         string opis;
