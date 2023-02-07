@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ProjektSQL
 {
@@ -32,11 +33,9 @@ namespace ProjektSQL
             return data;
         }
 
-        private void buttonWstaw_Click(object sender, EventArgs e)
+        private async void buttonWstaw_Click(object sender, EventArgs e)
         {
-            string table_name = Globals.mainWindow.comboBoxWybor.Text.ToUpper();
-            string[] data = readData();
-            string sqlCmd = QueryGenerator.cmdInsert(data, table_name);
+            OracleCommand sqlCmd = QueryGenerator.CmdInsert(readData(), Globals.mainWindow.comboBoxTables.Text.ToUpper());
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
@@ -46,12 +45,12 @@ namespace ProjektSQL
             textBox7.Text = "";
             if (sqlCmd == null)
             {
-                labelInfo.Text = "Podane dane nie są w właściwym formacie!";
+                labelInfo.Text = "Podane dane nie są we właściwym formacie!";
                 return;
             }
             try
             {
-                SqlQueries.SqlNonQuery(sqlCmd);
+                await SqlQueries.SqlNonQuery(sqlCmd);
                 labelInfo.Text = "Wstawiono!";
             }
             catch(Exception ex)

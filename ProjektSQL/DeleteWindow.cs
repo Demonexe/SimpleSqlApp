@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ProjektSQL
 {
@@ -19,41 +20,25 @@ namespace ProjektSQL
 
         private async void buttonUsun_Click(object sender, EventArgs e)
         {
-            string sqlNonQuery;
-            int controlSum = Globals.BoolToInt(checkBoxMniejsze.Checked) +
-                Globals.BoolToInt(checkBoxWieksze.Checked) + Globals.BoolToInt(checkBoxRowne.Checked);
-            string table_name = Globals.mainWindow.comboBoxWybor.Text;
-            string column_name = comboBoxKolumny.Text;
-            string value = textBoxWartosc.Text;
-            string date = dateTimePickerUsun.Value.ToString("yyy-MM-dd");
-            string type = (await SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'")).Rows[0][0].ToString();
-            if(type == "NUMBER" && float.TryParse(textBoxWartosc.Text, out _) && controlSum == 1)
-                sqlNonQuery = QueryGenerator.numberDelete(checkBoxMniejsze.Checked, checkBoxWieksze.Checked, checkBoxRowne.Checked,
-                    table_name, column_name, value);
-            else if(type == "VARCHAR2" && controlSum == 1 && checkBoxRowne.Checked)
-                sqlNonQuery = "delete from " + table_name + " where " + column_name + " = '" + value+"'";
-            else if(type == "DATE" && controlSum == 1)
-                sqlNonQuery = QueryGenerator.dateDelete(checkBoxMniejsze.Checked, checkBoxWieksze.Checked, checkBoxRowne.Checked,
-                    table_name, column_name, date);
-            else
-            {
-                labelInfo.Text = "Nie moge usunac z wybranymi opcjami";
-                return;
-            }
-            if(sqlNonQuery == null)
+            OracleCommand cmd = null;
+            DeleteSqlStatement sqlCommand = new DeleteSqlStatement(checkBoxMniejsze.Checked, checkBoxWieksze.Checked, checkBoxRowne.Checked,
+                Globals.mainWindow.comboBoxTables.Text, comboBoxKolumny.Text, dateTimePickerUsun.Value, textBoxWartosc.Text,
+                (await SqlQueries.SqlSelect(new OracleCommand($"Select data_type from all_tab_columns where column_name = {Globals.mainWindow.comboBoxTables.Text} and table_name = {comboBoxKolumny.Text}"))).Rows[0][0].ToString());
+            cmd = sqlCommand.BuildCommand();
+            if(cmd == null)
             {
                 labelInfo.Text = "Nie moge usunac z wybranymi opcjami";
                 return;
             }
             try
             {
-                labelInfo.Text = "Usunieto " + SqlQueries.SqlNonQuery(sqlNonQuery) + " rekordow!";
+                labelInfo.Text = $"Usunieto {await SqlQueries.SqlNonQuery(cmd)}rekordow!";
             }
             catch(Exception ex)
             {
                 labelInfo.Text = ex.Message.Split(new[] {':'},2)[1];
             }
-            Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect("select * from " + Globals.mainWindow.comboBoxWybor.Text);
+            Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect(new OracleCommand($"Select * from {Globals.mainWindow.comboBoxTables.Text}"));
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

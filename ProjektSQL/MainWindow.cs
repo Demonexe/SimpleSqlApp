@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ProjektSQL
 {
@@ -18,19 +13,22 @@ namespace ProjektSQL
         {
             InitializeComponent();
         }
-        private async void buttonZaloguj_Click(object sender, EventArgs e)
+        private async void buttonLogin_Click(object sender, EventArgs e)
         {
-            ErrorLabel.Text = await Globals.dbManager.SetConnection(textBoxUsername.Text, textBoxPassword.Text);
-            if (ErrorLabel.Text == null)
+            string response = await Globals.dbManager.SetConnection(textBoxUsername.Text, textBoxPassword.Text);
+            if (response != null)
+            {
+                ErrorLabel.Text = response;
                 return;
+            }
             labelZalogowano.Text = "Zalogowano jako " + textBoxUsername.Text + "!";
             textBoxUsername.Text = textBoxPassword.Text = "";
-            comboBoxWybor.Items.Clear();
-            DataTable userTables = await SqlQueries.SqlSelect("select table_name from user_tables");
+            comboBoxTables.Items.Clear();
+            DataTable userTables = await SqlQueries.SqlSelect(
+                new OracleCommand("select table_name from user_tables", Globals.dbManager.connection));
             foreach (DataRow row in userTables.Rows)
             {
-                comboBoxWybor.Items.Add(row["table_name"].ToString());
-                
+                comboBoxTables.Items.Add(row["table_name"].ToString());
             }
         }
         private string CheckState()
@@ -40,30 +38,30 @@ namespace ProjektSQL
                 ErrorLabel.Text = "Nie zalogowano!";
                 return null;
             }
-            if (comboBoxWybor.Text == "")
+            if (comboBoxTables.Text == "")
             {
                 ErrorLabel.Text = "Wybierz Tabele!";
                 return null;
             }
             Globals.mainWindow.Enabled = false;
-            return comboBoxWybor.Text.ToUpper();
+            return comboBoxTables.Text.ToUpper();
         }
-        private async void buttonWyszukaj_Click(object sender, EventArgs e)
+        private async void buttonSearch_Click(object sender, EventArgs e)
         {
             string table_name = CheckState();
             if (table_name == null)
                 return;
-            Globals.selectWindow = new SelectWindow();
-            string sqlQuery = "SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '" + table_name + "'";
-            DataTable columns = await SqlQueries.SqlSelect(sqlQuery);
+            SelectWindow selectWindow = new SelectWindow();
+            DataTable columns = await SqlQueries.SqlSelect(new OracleCommand() 
+            { CommandText = $"SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '{table_name}'",
+                Connection = Globals.dbManager.connection });
             foreach(DataRow row in columns.Rows)
             {
-                Globals.selectWindow.comboBoxWyszukaj.Items.Add(row["column_name"].ToString());
+                selectWindow.comboBoxWyszukaj.Items.Add(row["column_name"].ToString());
             }
-            Globals.selectWindow.Show();
+            selectWindow.Show();
         }
-
-        private async void buttonWstaw_Click(object sender, EventArgs e)
+        private async void buttonInsert_Click(object sender, EventArgs e)
         {
             string table_name = CheckState();
             if (table_name == "")
@@ -71,40 +69,37 @@ namespace ProjektSQL
             Globals.insertWindow = new InsertWindow();
             Setup.InitLabelsAndTB();
             Setup.SetVisibleLabelsAndTB(7, false);
-            nonDateColumns = int.Parse((await SqlQueries.SqlSelect("select count(*) from all_tab_columns where table_name = '" + table_name + "' and column_name NOT LIKE 'ID%' and data_type <> 'DATE'")).Rows[0][0].ToString());
+            nonDateColumns = int.Parse((await SqlQueries.SqlSelect(new OracleCommand() { CommandText = "select count(*) from all_tab_columns where table_name = '" + table_name + "' and column_name NOT LIKE 'ID%' and data_type <> 'DATE'", Connection = Globals.dbManager.connection })).Rows[0][0].ToString());
             Setup.SetVisibleLabelsAndTB(nonDateColumns, true);
-            DataTable columnNames = await SqlQueries.SqlSelect("select column_name from all_tab_columns where table_name = '" + table_name + "' and column_name NOT LIKE 'ID%' and data_type <> 'DATE'");
+            DataTable columnNames = await SqlQueries.SqlSelect(new OracleCommand() { CommandText = "select column_name from all_tab_columns where table_name = '" + table_name + "' and column_name NOT LIKE 'ID%' and data_type <> 'DATE'", Connection = Globals.dbManager.connection });
             Setup.SetLabelsText(columnNames, nonDateColumns);
-            DataTable dataColumnNames = await SqlQueries.SqlSelect("select column_name from all_tab_columns where table_name = '" + table_name + "' and data_type = 'DATE'");
+            DataTable dataColumnNames = await SqlQueries.SqlSelect(new OracleCommand() { CommandText = "select column_name from all_tab_columns where table_name = '" + table_name + "' and data_type = 'DATE'", Connection = Globals.dbManager.connection });
             dateColumns = Setup.ManageDateTables(dataColumnNames);
             Globals.insertWindow.Show();
         }
-
-        private async void buttonUsun_Click(object sender, EventArgs e)
+        private async void buttonDelete_Click(object sender, EventArgs e)
         {
             string table_name = CheckState();
             if (table_name == "")
                 return;
-            Globals.deleteWindow = new DeleteWindow();
-            string sqlQuery = "SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '" + table_name + "'";
-            DataTable columns = await SqlQueries.SqlSelect(sqlQuery);
+            DeleteWindow deleteWindow = new DeleteWindow();
+            DataTable columns = await SqlQueries.SqlSelect(new OracleCommand() 
+            { CommandText = $"SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '{table_name}'",
+                Connection = Globals.dbManager.connection});
             foreach (DataRow row in columns.Rows)
             {
-                Globals.deleteWindow.comboBoxKolumny.Items.Add(row["column_name"].ToString());
+                deleteWindow.comboBoxKolumny.Items.Add(row["column_name"].ToString());
             }
-            Globals.deleteWindow.Show();
+            deleteWindow.Show();
         }
-
-        private async void comboBoxWybor_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBoxTables_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Paging.SetDataSource( await SqlQueries.SqlSelect("select * from " + comboBoxWybor.Text));
+            Paging.SetDataSource( await SqlQueries.SqlSelect(new OracleCommand() { CommandText = "select * from " + comboBoxTables.Text, Connection = Globals.dbManager.connection}));
         }
-
         private void buttonPagingLower_Click(object sender, EventArgs e)
         {
             Paging.DecreasePage();
         }
-
         private void buttonPagingUpper_Click(object sender, EventArgs e)
         {
             Paging.IncreasePage();

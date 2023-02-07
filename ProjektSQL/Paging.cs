@@ -9,7 +9,7 @@ namespace ProjektSQL
 {
     internal static class Paging
     {
-        static int rowsPerPage = 3;
+        static int rowsPerPage = 10;
         static int currentPage = 1;
         static DataTable dataSource;
         public static void SetDataSource(DataTable dt)
@@ -20,8 +20,7 @@ namespace ProjektSQL
             foreach(DataRow row in dataSource.Rows)
             {
                 dataTable.ImportRow(row);
-                i++;
-                if (i == rowsPerPage)
+                if (++i == rowsPerPage)
                     break;
             }
             Globals.mainWindow.dataGV.DataSource = dataTable;

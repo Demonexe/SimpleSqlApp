@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ProjektSQL
 {
@@ -18,13 +13,6 @@ namespace ProjektSQL
             InitializeComponent();
         }
 
-        private int CalculateControlSum()
-        {
-            return Globals.BoolToInt(checkBoxMin.Checked) +
-                Globals.BoolToInt(checkBoxMax.Checked) +
-                Globals.BoolToInt(checkBoxWieksze.Checked) + Globals.BoolToInt(checkBoxMniejsze.Checked);
-        }
-
         private async void buttonSelect_Click(object sender, EventArgs e)
         {
             if (comboBoxWyszukaj.Text == "")
@@ -32,34 +20,27 @@ namespace ProjektSQL
                 labelWyszukajInfo.Text = "Nie wybrano nazwy kolumny!";
                 return;
             }
-            int controlSum = CalculateControlSum();
-            string sqlQuery = null;
-            string table_name = Globals.mainWindow.comboBoxWybor.Text;
-            string column_name = comboBoxWyszukaj.Text;
-            string value = textBoxWyszukaj.Text;
-            string date = dateTimePickerWyszukaj.Value.ToString("yyyy-MM-dd");
-            string type = (await SqlQueries.SqlSelect("Select data_type from all_tab_columns where column_name = '" + column_name + "' and table_name = '" + table_name + "'")).Rows[0][0].ToString();
-            if(type == "DATE")
-                sqlQuery = QueryGenerator.dateSelect(controlSum, checkBoxMin.Checked,checkBoxMax.Checked,
-                    checkBoxMniejsze.Checked,checkBoxWieksze.Checked,column_name,table_name,date);
-            else if (controlSum == 0 && value != "" && type == "VARCHAR2")// string, rowne
-                sqlQuery = "select * from " + table_name + " where " + column_name + "= '" + value + "'";
-            else if(type == "NUMBER")
-                sqlQuery = QueryGenerator.numberSelect(controlSum, checkBoxMin.Checked, checkBoxMax.Checked,
-                    checkBoxMniejsze.Checked, checkBoxWieksze.Checked, column_name, table_name,value);
-            else
-            {
-                labelWyszukajInfo.Text = "Z wybranymi opcjami nie moge wyszukac!";
-                return;
-            }
-            if (sqlQuery == null)
+            
+            SelectSqlStatement statement = new SelectSqlStatement(
+                checkBoxMniejsze.Checked, checkBoxWieksze.Checked, checkBoxMin.Checked,
+                checkBoxMax.Checked, comboBoxWyszukaj.Text, 
+                Globals.mainWindow.comboBoxTables.Text, textBoxWyszukaj.Text, 
+                dateTimePickerWyszukaj.Value,
+                (await (SqlQueries.SqlSelect(new OracleCommand() { 
+                    CommandText = $"Select data_type from all_tab_columns where column_name = " +
+                    $"'{comboBoxWyszukaj.Text}' and table_name = '{Globals.mainWindow.comboBoxTables.Text}'",
+                    Connection = Globals.dbManager.connection })))
+                    .Rows[0][0].ToString()
+                );
+            OracleCommand cmd = statement.BuildCommand();
+            if (cmd == null)
             {
                 labelWyszukajInfo.Text = "Z wybranymi opcjami nie moge wyszukac!";
                 return;
             }
             try
             {
-                Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect(sqlQuery);
+                Globals.mainWindow.dataGV.DataSource = await SqlQueries.SqlSelect(cmd);
             }
             catch(Exception ex)
             {

@@ -28,184 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonZaloguj = new System.Windows.Forms.Button();
-            this.dataGV = new System.Windows.Forms.DataGridView();
-            this.ErrorLabel = new System.Windows.Forms.Label();
-            this.buttonWyszukaj = new System.Windows.Forms.Button();
-            this.buttonWstaw = new System.Windows.Forms.Button();
-            this.buttonUsun = new System.Windows.Forms.Button();
-            this.comboBoxWybor = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.labelZalogowano = new System.Windows.Forms.Label();
-            this.buttonPagingLower = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.comboBoxTables = new System.Windows.Forms.ComboBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.splitter2 = new System.Windows.Forms.Splitter();
             this.buttonPagingUpper = new System.Windows.Forms.Button();
+            this.buttonPagingLower = new System.Windows.Forms.Button();
+            this.dataGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonZaloguj
+            // splitter1
             // 
-            this.buttonZaloguj.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonZaloguj.Location = new System.Drawing.Point(9, 76);
-            this.buttonZaloguj.Name = "buttonZaloguj";
-            this.buttonZaloguj.Size = new System.Drawing.Size(263, 51);
-            this.buttonZaloguj.TabIndex = 0;
-            this.buttonZaloguj.Text = "Zaloguj";
-            this.buttonZaloguj.UseVisualStyleBackColor = true;
-            this.buttonZaloguj.Click += new System.EventHandler(this.buttonZaloguj_Click);
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(296, 556);
+            this.splitter1.TabIndex = 16;
+            this.splitter1.TabStop = false;
+            // 
+            // labelZalogowano
+            // 
+            this.labelZalogowano.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZalogowano.Location = new System.Drawing.Point(15, 381);
+            this.labelZalogowano.Name = "labelZalogowano";
+            this.labelZalogowano.Size = new System.Drawing.Size(263, 23);
+            this.labelZalogowano.TabIndex = 27;
+            this.labelZalogowano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(107, 45);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(171, 22);
+            this.textBoxPassword.TabIndex = 26;
+            this.textBoxPassword.Text = "PU";
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Location = new System.Drawing.Point(107, 12);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(171, 22);
+            this.textBoxUsername.TabIndex = 25;
+            this.textBoxUsername.Text = "ProjektUser";
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPassword.Location = new System.Drawing.Point(12, 45);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(89, 22);
+            this.labelPassword.TabIndex = 24;
+            this.labelPassword.Text = "Hasło";
+            // 
+            // labelLogin
+            // 
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelLogin.Location = new System.Drawing.Point(12, 15);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(89, 30);
+            this.labelLogin.TabIndex = 23;
+            this.labelLogin.Text = "Login";
+            // 
+            // comboBoxTables
+            // 
+            this.comboBoxTables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTables.FormattingEnabled = true;
+            this.comboBoxTables.Location = new System.Drawing.Point(15, 136);
+            this.comboBoxTables.Name = "comboBoxTables";
+            this.comboBoxTables.Size = new System.Drawing.Size(263, 24);
+            this.comboBoxTables.TabIndex = 22;
+            this.comboBoxTables.SelectedIndexChanged += new System.EventHandler(this.comboBoxTables_SelectedIndexChanged);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDelete.Location = new System.Drawing.Point(15, 311);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(263, 57);
+            this.buttonDelete.TabIndex = 21;
+            this.buttonDelete.Text = "Usuń";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonInsert.Location = new System.Drawing.Point(15, 245);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(263, 60);
+            this.buttonInsert.TabIndex = 20;
+            this.buttonInsert.Text = "Wstaw";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSearch.Location = new System.Drawing.Point(15, 181);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(263, 58);
+            this.buttonSearch.TabIndex = 19;
+            this.buttonSearch.Text = "Wyszukaj";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ErrorLabel.Location = new System.Drawing.Point(15, 421);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(263, 91);
+            this.ErrorLabel.TabIndex = 18;
+            this.ErrorLabel.Text = "Info Box";
+            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLogin.Location = new System.Drawing.Point(15, 79);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(263, 51);
+            this.buttonLogin.TabIndex = 17;
+            this.buttonLogin.Text = "Zaloguj";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // splitter2
+            // 
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter2.Location = new System.Drawing.Point(296, 504);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(693, 52);
+            this.splitter2.TabIndex = 28;
+            this.splitter2.TabStop = false;
+            // 
+            // buttonPagingUpper
+            // 
+            this.buttonPagingUpper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPagingUpper.Location = new System.Drawing.Point(737, 524);
+            this.buttonPagingUpper.Name = "buttonPagingUpper";
+            this.buttonPagingUpper.Size = new System.Drawing.Size(241, 32);
+            this.buttonPagingUpper.TabIndex = 30;
+            this.buttonPagingUpper.Text = ">>>";
+            this.buttonPagingUpper.UseVisualStyleBackColor = true;
+            this.buttonPagingUpper.Click += new System.EventHandler(this.buttonPagingUpper_Click);
+            // 
+            // buttonPagingLower
+            // 
+            this.buttonPagingLower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonPagingLower.Location = new System.Drawing.Point(302, 524);
+            this.buttonPagingLower.Name = "buttonPagingLower";
+            this.buttonPagingLower.Size = new System.Drawing.Size(241, 32);
+            this.buttonPagingLower.TabIndex = 29;
+            this.buttonPagingLower.Text = "<<<";
+            this.buttonPagingLower.UseVisualStyleBackColor = true;
+            this.buttonPagingLower.Click += new System.EventHandler(this.buttonPagingLower_Click);
             // 
             // dataGV
             // 
             this.dataGV.AllowUserToAddRows = false;
             this.dataGV.AllowUserToDeleteRows = false;
-            this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV.Location = new System.Drawing.Point(284, 12);
-            this.dataGV.MaximumSize = new System.Drawing.Size(1600, 800);
-            this.dataGV.MinimumSize = new System.Drawing.Size(810, 497);
+            this.dataGV.ColumnHeadersHeight = 29;
+            this.dataGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGV.Location = new System.Drawing.Point(296, 0);
+            this.dataGV.MinimumSize = new System.Drawing.Size(600, 400);
             this.dataGV.Name = "dataGV";
             this.dataGV.RowHeadersWidth = 51;
             this.dataGV.RowTemplate.Height = 24;
-            this.dataGV.Size = new System.Drawing.Size(810, 497);
-            this.dataGV.TabIndex = 1;
-            // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ErrorLabel.Location = new System.Drawing.Point(9, 418);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(263, 91);
-            this.ErrorLabel.TabIndex = 4;
-            this.ErrorLabel.Text = "Info Box";
-            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonWyszukaj
-            // 
-            this.buttonWyszukaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWyszukaj.Location = new System.Drawing.Point(9, 178);
-            this.buttonWyszukaj.Name = "buttonWyszukaj";
-            this.buttonWyszukaj.Size = new System.Drawing.Size(263, 58);
-            this.buttonWyszukaj.TabIndex = 5;
-            this.buttonWyszukaj.Text = "Wyszukaj";
-            this.buttonWyszukaj.UseVisualStyleBackColor = true;
-            this.buttonWyszukaj.Click += new System.EventHandler(this.buttonWyszukaj_Click);
-            // 
-            // buttonWstaw
-            // 
-            this.buttonWstaw.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWstaw.Location = new System.Drawing.Point(9, 242);
-            this.buttonWstaw.Name = "buttonWstaw";
-            this.buttonWstaw.Size = new System.Drawing.Size(263, 60);
-            this.buttonWstaw.TabIndex = 6;
-            this.buttonWstaw.Text = "Wstaw";
-            this.buttonWstaw.UseVisualStyleBackColor = true;
-            this.buttonWstaw.Click += new System.EventHandler(this.buttonWstaw_Click);
-            // 
-            // buttonUsun
-            // 
-            this.buttonUsun.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUsun.Location = new System.Drawing.Point(9, 308);
-            this.buttonUsun.Name = "buttonUsun";
-            this.buttonUsun.Size = new System.Drawing.Size(263, 57);
-            this.buttonUsun.TabIndex = 7;
-            this.buttonUsun.Text = "Usuń";
-            this.buttonUsun.UseVisualStyleBackColor = true;
-            this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
-            // 
-            // comboBoxWybor
-            // 
-            this.comboBoxWybor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWybor.FormattingEnabled = true;
-            this.comboBoxWybor.Location = new System.Drawing.Point(9, 133);
-            this.comboBoxWybor.Name = "comboBoxWybor";
-            this.comboBoxWybor.Size = new System.Drawing.Size(263, 24);
-            this.comboBoxWybor.TabIndex = 8;
-            this.comboBoxWybor.SelectedIndexChanged += new System.EventHandler(this.comboBoxWybor_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(6, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 30);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Login";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(6, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 22);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Hasło";
-            // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.Location = new System.Drawing.Point(101, 9);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(171, 22);
-            this.textBoxUsername.TabIndex = 11;
-            this.textBoxUsername.Text = "ProjektUser";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(101, 42);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(171, 22);
-            this.textBoxPassword.TabIndex = 12;
-            this.textBoxPassword.Text = "PU";
-            // 
-            // labelZalogowano
-            // 
-            this.labelZalogowano.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZalogowano.Location = new System.Drawing.Point(9, 378);
-            this.labelZalogowano.Name = "labelZalogowano";
-            this.labelZalogowano.Size = new System.Drawing.Size(263, 23);
-            this.labelZalogowano.TabIndex = 13;
-            this.labelZalogowano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonPagingLower
-            // 
-            this.buttonPagingLower.Location = new System.Drawing.Point(835, 515);
-            this.buttonPagingLower.Name = "buttonPagingLower";
-            this.buttonPagingLower.Size = new System.Drawing.Size(84, 32);
-            this.buttonPagingLower.TabIndex = 14;
-            this.buttonPagingLower.Text = "<<<";
-            this.buttonPagingLower.UseVisualStyleBackColor = true;
-            this.buttonPagingLower.Click += new System.EventHandler(this.buttonPagingLower_Click);
-            // 
-            // buttonPagingUpper
-            // 
-            this.buttonPagingUpper.Location = new System.Drawing.Point(1010, 515);
-            this.buttonPagingUpper.Name = "buttonPagingUpper";
-            this.buttonPagingUpper.Size = new System.Drawing.Size(84, 32);
-            this.buttonPagingUpper.TabIndex = 15;
-            this.buttonPagingUpper.Text = ">>>";
-            this.buttonPagingUpper.UseVisualStyleBackColor = true;
-            this.buttonPagingUpper.Click += new System.EventHandler(this.buttonPagingUpper_Click);
+            this.dataGV.Size = new System.Drawing.Size(693, 504);
+            this.dataGV.TabIndex = 31;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 553);
+            this.ClientSize = new System.Drawing.Size(989, 556);
+            this.Controls.Add(this.dataGV);
             this.Controls.Add(this.buttonPagingUpper);
             this.Controls.Add(this.buttonPagingLower);
+            this.Controls.Add(this.splitter2);
             this.Controls.Add(this.labelZalogowano);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxWybor);
-            this.Controls.Add(this.buttonUsun);
-            this.Controls.Add(this.buttonWstaw);
-            this.Controls.Add(this.buttonWyszukaj);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.labelLogin);
+            this.Controls.Add(this.comboBoxTables);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonInsert);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.ErrorLabel);
-            this.Controls.Add(this.dataGV);
-            this.Controls.Add(this.buttonZaloguj);
+            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.splitter1);
+            this.MinimumSize = new System.Drawing.Size(819, 600);
             this.Name = "MainWindow";
             this.Text = "SQL Manager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
@@ -215,21 +239,22 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonZaloguj;
-        public System.Windows.Forms.DataGridView dataGV;
-        public System.Windows.Forms.Label ErrorLabel;
-        private System.Windows.Forms.Button buttonWyszukaj;
-        private System.Windows.Forms.Button buttonWstaw;
-        private System.Windows.Forms.Button buttonUsun;
-        public System.Windows.Forms.ComboBox comboBoxWybor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxUsername;
-        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label labelZalogowano;
-        private System.Windows.Forms.Button buttonPagingLower;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelLogin;
+        public System.Windows.Forms.ComboBox comboBoxTables;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.Button buttonSearch;
+        public System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button buttonPagingUpper;
+        private System.Windows.Forms.Button buttonPagingLower;
+        public System.Windows.Forms.DataGridView dataGV;
     }
 }
 
